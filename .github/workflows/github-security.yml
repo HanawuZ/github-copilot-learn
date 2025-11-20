@@ -27,7 +27,7 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
+      - name: Build with dotnet
+        run: dotnet build HelloWorld.csproj --configuration Release
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
